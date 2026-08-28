@@ -14,6 +14,11 @@
             box-sizing: border-box;
         }
 
+        /* Remove blue tap highlight on mobile for ALL elements */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
             font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive, sans-serif;
             background: #f5f5f5;
@@ -36,10 +41,6 @@
             text-align: center;
             transition: all 0.1s ease;
             position: relative;
-        }
-
-        /* Slightly tilted for sketchy feel */
-        .card {
             transform: rotate(-0.5deg);
         }
 
@@ -64,6 +65,8 @@
             box-shadow: 6px 6px 0px 0px #000000;
             transition: all 0.1s ease;
             transform: rotate(2deg);
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
 
         .avatar:hover {
@@ -135,6 +138,7 @@
             padding: 4px 12px;
             display: inline-block;
             background: #ffffff;
+            user-select: none;
         }
 
         /* ----- SKETCHY BUTTONS ----- */
@@ -159,6 +163,9 @@
             color: #000000;
             box-shadow: 4px 4px 0px 0px #000000;
             font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            touch-action: manipulation;
         }
 
         .btn:hover {
@@ -169,6 +176,11 @@
         .btn:active {
             transform: translate(2px, 2px);
             box-shadow: 0px 0px 0px 0px #000000;
+        }
+
+        /* Remove focus outline on mobile */
+        .btn:focus {
+            outline: none;
         }
 
         .btn-primary {
