@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Test Website</title>
+    
+    <!-- CSS Styles -->
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* ----- MAIN CARD ----- */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 48px 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ----- PROFILE AVATAR ----- */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(245, 87, 108, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.08) rotate(5deg);
+        }
+
+        /* ----- TYPOGRAPHY ----- */
+        h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .bio {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        /* ----- COUNTER SECTION ----- */
+        .counter-section {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .counter-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .counter-number {
+            color: #ffffff;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 4px 0 12px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ----- BUTTONS ----- */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            box-shadow: 0 4px 16px rgba(245, 87, 108, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.5);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: translateY(-3px);
+        }
+
+        .btn-danger {
+            background: rgba(255, 70, 70, 0.2);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 70, 70, 0.25);
+        }
+
+        .btn-danger:hover {
+            background: rgba(255, 70, 70, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* ----- MESSAGE / FEEDBACK ----- */
+        .message {
+            margin-top: 20px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .message-success {
+            background: rgba(46, 213, 115, 0.15);
+            color: #2ed573;
+            border: 1px solid rgba(46, 213, 115, 0.2);
+        }
+
+        .message-info {
+            background: rgba(54, 164, 235, 0.12);
+            color: #54a0ff;
+            border: 1px solid rgba(54, 164, 235, 0.15);
+        }
+
+        .message-hidden {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 480px) {
+            .card {
+                padding: 32px 20px;
+            }
+            .avatar {
+                width: 90px;
+                height: 90px;
+                font-size: 36px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            .counter-number {
+                font-size: 36px;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 13px;
+                width: 100%;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        
+        <!-- Avatar -->
+        <div class="avatar">🚀</div>
+
+        <!-- Title -->
+        <h1>My Test Page</h1>
+        <p class="subtitle">✦ Hosted on GitHub Pages ✦</p>
+
+        <!-- Bio -->
+        <p class="bio">
+            Hello! 👋 This is a test website built with HTML, CSS, and JavaScript. 
+            Click the buttons below to see JavaScript in action!
+        </p>
+
+        <!-- Counter -->
+        <div class="counter-section">
+            <div class="counter-label">Button Clicks</div>
+            <div class="counter-number" id="clickCounter">0</div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <button class="btn btn-primary" id="incrementBtn">➕ Increment</button>
+            <button class="btn btn-secondary" id="resetBtn">⟲ Reset</button>
+            <button class="btn btn-danger" id="decrementBtn">➖ Decrement</button>
+        </div>
+
+        <!-- Message Area -->
+        <div class="message message-hidden" id="messageArea"></div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ----- DOM ELEMENTS -----
+        const counterDisplay = document.getElementById('clickCounter');
+        const incrementBtn = document.getElementById('incrementBtn');
+        const decrementBtn = document.getElementById('decrementBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const messageArea = document.getElementById('messageArea');
+
+        // ----- STATE -----
+        let count = 0;
+
+        // ----- HELPER FUNCTIONS -----
+        function updateCounter() {
+            counterDisplay.textContent = count;
+        }
+
+        function showMessage(text, type = 'info') {
+            messageArea.textContent = text;
+            messageArea.className = `message message-${type}`;
+            
+            // Auto-hide after 3 seconds
+            clearTimeout(window.messageTimeout);
+            window.messageTimeout = setTimeout(() => {
+                messageArea.className = 'message message-hidden';
+            }, 3000);
+        }
+
+        // ----- EVENT HANDLERS -----
+        function handleIncrement() {
+            count += 1;
+            updateCounter();
+            showMessage(`✨ Count is now ${count}`, 'success');
+        }
+
+        function handleDecrement() {
+            count -= 1;
+            updateCounter();
+            showMessage(`⬇️ Count is now ${count}`, 'info');
+        }
+
+        function handleReset() {
+            count = 0;
+            updateCounter();
+            showMessage(`🔄 Counter has been reset to 0`, 'info');
+        }
+
+        // ----- ATTACH EVENTS -----
+        incrementBtn.addEventListener('click', handleIncrement);
+        decrementBtn.addEventListener('click', handleDecrement);
+        resetBtn.addEventListener('click', handleReset);
+
+        // ----- KEYBOARD SHORTCUTS (fun extra) -----
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp' || e.key === '+') {
+                e.preventDefault();
+                handleIncrement();
+            } else if (e.key === 'ArrowDown' || e.key === '-') {
+                e.preventDefault();
+                handleDecrement();
+            } else if (e.key === 'r' || e.key === 'R') {
+                e.preventDefault();
+                handleReset();
+            }
+        });
+
+        // ----- INITIAL WELCOME -----
+        // Show a welcome message when the page loads
+        window.addEventListener('load', () => {
+            showMessage('🚀 Welcome! Click a button or use arrow keys (+ / -)', 'info');
+        });
+
+        // Console greeting for developers
+        console.log('👋 Hello, developer! This site is built with HTML, CSS, and JavaScript.');
+        console.log('💡 Try using the arrow keys (↑ / ↓) or R to reset!');
+    </script>
+
+</body>
+</html>
