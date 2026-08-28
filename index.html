@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Test Website</title>
+    <title>Sketchy Site</title>
     
-    <!-- CSS Styles -->
+    <!-- CSS Styles - Sketchy Black & White -->
     <style>
         /* ----- RESET & BASE ----- */
         * {
@@ -15,8 +15,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive, sans-serif;
+            background: #f5f5f5;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,97 +24,120 @@
             padding: 20px;
         }
 
-        /* ----- MAIN CARD ----- */
+        /* ----- MAIN CARD - SKETCHY STYLE ----- */
         .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 24px;
+            background: #ffffff;
+            border: 4px solid #000000;
+            border-radius: 0px;
             padding: 48px 40px;
             max-width: 500px;
             width: 100%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 12px 12px 0px 0px #000000;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.1s ease;
+            position: relative;
+        }
+
+        /* Slightly tilted for sketchy feel */
+        .card {
+            transform: rotate(-0.5deg);
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: rotate(0.5deg) translate(-2px, -2px);
+            box-shadow: 16px 16px 0px 0px #000000;
         }
 
-        /* ----- PROFILE AVATAR ----- */
+        /* ----- SKETCHY AVATAR ----- */
         .avatar {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #f093fb, #f5576c);
+            background: #ffffff;
+            border: 4px solid #000000;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 20px;
             font-size: 48px;
-            color: white;
-            box-shadow: 0 8px 32px rgba(245, 87, 108, 0.4);
-            transition: transform 0.3s ease;
+            color: #000000;
+            box-shadow: 6px 6px 0px 0px #000000;
+            transition: all 0.1s ease;
+            transform: rotate(2deg);
         }
 
         .avatar:hover {
-            transform: scale(1.08) rotate(5deg);
+            transform: rotate(-3deg) scale(1.02);
+            box-shadow: 10px 10px 0px 0px #000000;
         }
 
         /* ----- TYPOGRAPHY ----- */
         h1 {
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: 700;
+            color: #000000;
+            font-size: 32px;
+            font-weight: 900;
             margin-bottom: 4px;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            text-decoration-thickness: 3px;
         }
 
         .subtitle {
-            color: rgba(255, 255, 255, 0.6);
+            color: #333333;
             font-size: 14px;
             font-weight: 400;
             margin-bottom: 24px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px dashed #000000;
+            padding-bottom: 12px;
         }
 
         .bio {
-            color: rgba(255, 255, 255, 0.8);
+            color: #222222;
             font-size: 16px;
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 28px;
+            font-weight: 400;
+            border-left: 3px solid #000000;
+            padding-left: 16px;
+            text-align: left;
         }
 
-        /* ----- COUNTER SECTION ----- */
+        /* ----- COUNTER SECTION - SKETCHY ----- */
         .counter-section {
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
+            background: #ffffff;
+            border: 3px solid #000000;
             padding: 20px;
             margin-bottom: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 4px 4px 0px 0px #000000;
+            transform: rotate(0.5deg);
         }
 
         .counter-label {
-            color: rgba(255, 255, 255, 0.5);
+            color: #000000;
             font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            font-weight: 700;
         }
 
         .counter-number {
-            color: #ffffff;
-            font-size: 48px;
-            font-weight: 700;
-            margin: 4px 0 12px;
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #000000;
+            font-size: 56px;
+            font-weight: 900;
+            margin: 4px 0 8px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 4px;
+            border: 2px solid #000000;
+            padding: 4px 12px;
+            display: inline-block;
+            background: #ffffff;
         }
 
-        /* ----- BUTTONS ----- */
+        /* ----- SKETCHY BUTTONS ----- */
         .button-group {
             display: flex;
             gap: 12px;
@@ -124,87 +147,93 @@
 
         .btn {
             padding: 12px 28px;
-            border: none;
-            border-radius: 50px;
+            border: 3px solid #000000;
+            border-radius: 0px;
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.25s ease;
-            letter-spacing: 0.3px;
+            transition: all 0.1s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 4px 4px 0px 0px #000000;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+        }
+
+        .btn:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0px 0px #000000;
+        }
+
+        .btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #000000;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            color: white;
-            box-shadow: 0 4px 16px rgba(245, 87, 108, 0.35);
+            background: #ffffff;
+            color: #000000;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.5);
-        }
-
-        .btn-primary:active {
-            transform: scale(0.97);
+            background: #000000;
+            color: #ffffff;
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 4px 4px 0px 0px #555555;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.16);
-            transform: translateY(-3px);
+            background: #eeeeee;
+            box-shadow: 8px 8px 0px 0px #333333;
         }
 
         .btn-danger {
-            background: rgba(255, 70, 70, 0.2);
-            color: #ff6b6b;
-            border: 1px solid rgba(255, 70, 70, 0.25);
+            background: #ffffff;
+            color: #000000;
+            border-color: #000000;
+            box-shadow: 4px 4px 0px 0px #000000;
         }
 
         .btn-danger:hover {
-            background: rgba(255, 70, 70, 0.3);
-            transform: translateY(-3px);
+            background: #000000;
+            color: #ffffff;
         }
 
-        /* ----- MESSAGE / FEEDBACK ----- */
+        /* ----- MESSAGE AREA ----- */
         .message {
             margin-top: 20px;
             padding: 12px 16px;
-            border-radius: 12px;
+            border: 3px solid #000000;
             font-size: 14px;
             min-height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.4s ease;
-        }
-
-        .message-success {
-            background: rgba(46, 213, 115, 0.15);
-            color: #2ed573;
-            border: 1px solid rgba(46, 213, 115, 0.2);
-        }
-
-        .message-info {
-            background: rgba(54, 164, 235, 0.12);
-            color: #54a0ff;
-            border: 1px solid rgba(54, 164, 235, 0.15);
+            transition: all 0.3s ease;
+            background: #ffffff;
+            color: #000000;
+            font-weight: 600;
+            box-shadow: 4px 4px 0px 0px #000000;
+            transform: rotate(-0.3deg);
         }
 
         .message-hidden {
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(10px) rotate(0deg);
             pointer-events: none;
+            box-shadow: none;
         }
 
         /* ----- RESPONSIVE ----- */
         @media (max-width: 480px) {
             .card {
                 padding: 32px 20px;
+                box-shadow: 8px 8px 0px 0px #000000;
             }
             .avatar {
                 width: 90px;
@@ -212,10 +241,10 @@
                 font-size: 36px;
             }
             h1 {
-                font-size: 22px;
+                font-size: 24px;
             }
             .counter-number {
-                font-size: 36px;
+                font-size: 40px;
             }
             .btn {
                 padding: 10px 20px;
@@ -233,16 +262,16 @@
     <div class="card">
         
         <!-- Avatar -->
-        <div class="avatar">🚀</div>
+        <div class="avatar">✏️</div>
 
         <!-- Title -->
-        <h1>My Test Page</h1>
-        <p class="subtitle">✦ Hosted on GitHub Pages ✦</p>
+        <h1>Sketchy Page</h1>
+        <p class="subtitle">✦ Hand-drawn vibes ✦</p>
 
         <!-- Bio -->
         <p class="bio">
-            Hello! 👋 This is a test website built with HTML, CSS, and JavaScript. 
-            Click the buttons below to see JavaScript in action!
+            Hello! 👋 This is a <strong>sketchy</strong> black & white test page.
+            No colors — just pure black, white, and bold borders.
         </p>
 
         <!-- Counter -->
@@ -253,9 +282,9 @@
 
         <!-- Buttons -->
         <div class="button-group">
-            <button class="btn btn-primary" id="incrementBtn">➕ Increment</button>
-            <button class="btn btn-secondary" id="resetBtn">⟲ Reset</button>
-            <button class="btn btn-danger" id="decrementBtn">➖ Decrement</button>
+            <button class="btn btn-primary" id="incrementBtn">+ Increment</button>
+            <button class="btn btn-secondary" id="resetBtn">↺ Reset</button>
+            <button class="btn btn-danger" id="decrementBtn">− Decrement</button>
         </div>
 
         <!-- Message Area -->
@@ -280,11 +309,10 @@
             counterDisplay.textContent = count;
         }
 
-        function showMessage(text, type = 'info') {
+        function showMessage(text) {
             messageArea.textContent = text;
-            messageArea.className = `message message-${type}`;
+            messageArea.className = 'message';
             
-            // Auto-hide after 3 seconds
             clearTimeout(window.messageTimeout);
             window.messageTimeout = setTimeout(() => {
                 messageArea.className = 'message message-hidden';
@@ -295,19 +323,19 @@
         function handleIncrement() {
             count += 1;
             updateCounter();
-            showMessage(`✨ Count is now ${count}`, 'success');
+            showMessage(`✏️ Count is now ${count}`);
         }
 
         function handleDecrement() {
             count -= 1;
             updateCounter();
-            showMessage(`⬇️ Count is now ${count}`, 'info');
+            showMessage(`⬇️ Count is now ${count}`);
         }
 
         function handleReset() {
             count = 0;
             updateCounter();
-            showMessage(`🔄 Counter has been reset to 0`, 'info');
+            showMessage(`↺ Counter reset to 0`);
         }
 
         // ----- ATTACH EVENTS -----
@@ -315,7 +343,7 @@
         decrementBtn.addEventListener('click', handleDecrement);
         resetBtn.addEventListener('click', handleReset);
 
-        // ----- KEYBOARD SHORTCUTS (fun extra) -----
+        // ----- KEYBOARD SHORTCUTS -----
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowUp' || e.key === '+') {
                 e.preventDefault();
@@ -329,15 +357,12 @@
             }
         });
 
-        // ----- INITIAL WELCOME -----
-        // Show a welcome message when the page loads
+        // ----- WELCOME -----
         window.addEventListener('load', () => {
-            showMessage('🚀 Welcome! Click a button or use arrow keys (+ / -)', 'info');
+            showMessage('✏️ Sketchy mode activated!');
         });
 
-        // Console greeting for developers
-        console.log('👋 Hello, developer! This site is built with HTML, CSS, and JavaScript.');
-        console.log('💡 Try using the arrow keys (↑ / ↓) or R to reset!');
+        console.log('✏️ Sketchy black & white theme loaded!');
     </script>
 
 </body>
